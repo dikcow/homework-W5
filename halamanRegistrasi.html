@@ -19,7 +19,7 @@
           <button class="nav-link active" id="pills-registrasi-tab" data-bs-toggle="pill" data-bs-target="#pills-registrasi" type="button" role="tab" aria-controls="pills-registrasi" aria-selected="true">Registrasi</button>
         </li>
         <li class="nav-item">
-          <button class="nav-link" id="pills-database-tab" data-bs-toggle="pill" data-bs-target="#pills-database" type="button" role="tab" aria-controls="pills-database" aria-selected="false">Database</button>
+          <button class="nav-link" id="pills-database-tab" data-bs-toggle="pill" data-bs-target="#pills-database" type="button" role="tab" aria-controls="pills-database" aria-selected="false">List Registrasi</button>
         </li>
       </ul>
     </div>
@@ -27,16 +27,16 @@
     <div class="container mt-5" id="pills-tabContent">
       <h1 class="text-center fs-2 mb-5">Pendaftaran</h1>
       <div class="input-group mb-3">
-        <span class="input-group-text">Nama Game</span>
-        <input type="text" class="form-control" placeholder="Nama game yang anda sukai" aria-label="Username" aria-describedby="basic-addon1" id="input-nama" />
+        <span class="input-group-text">Nama</span>
+        <input type="text" class="form-control" placeholder="input nama minimal 10 karakter" aria-label="Username" aria-describedby="basic-addon1" id="input-nama" />
       </div>
       <div class="input-group mb-3">
-        <span class="input-group-text">Author</span>
-        <input type="text" class="form-control" placeholder="Masukan pencipta game" aria-label="Username" aria-describedby="basic-addon1" id="input-author" />
+        <span class="input-group-text">Umur</span>
+        <input type="text" class="form-control" placeholder="input umur anda, min 25 tahun" aria-label="Username" aria-describedby="basic-addon1" id="input-umur" />
       </div>
       <div class="input-group mb-3">
-        <span class="input-group-text">Tahun Rilis</span>
-        <input type="text" class="form-control" placeholder="Masukan tahun rilis" aria-label="Username" aria-describedby="basic-addon1" id="input-tahun" />
+        <span class="input-group-text">Uang Sangu</span>
+        <input type="text" class="form-control" placeholder="input minimal 100rb dan maksimal 1 juta" aria-label="Username" aria-describedby="basic-addon1" id="input-uang" />
       </div>
       <button type="button" class="btn btn-secondary" id="submit-button">Submit</button>
     </div>
@@ -45,10 +45,10 @@
       <table class="table table-hover">
         <thead>
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">Nama Game</th>
-            <th scope="col">Author</th>
-            <th scope="col">Tahun Rilis</th>
+            <th scope="col">Nomor</th>
+            <th scope="col">Nama</th>
+            <th scope="col">Umur</th>
+            <th scope="col">Uang Saku</th>
           </tr>
         </thead>
         <tbody id="table-data"></tbody>

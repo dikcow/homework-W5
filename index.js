@@ -6,7 +6,7 @@ class Game {
   }
 }
 
-const dataGame = [new Game("Crash Bandicot", "EA", "2001"), new Game("Royal Rumble", "EA", "2001"), new Game("Tekken", "EA", "2001")];
+const dataGame = [new Game("Andika", "25", "100000"), new Game("Rizki", "25", "150000"), new Game("Saputra", "25", "200000")];
 
 window.addEventListener("load", (event) => {
   const submitButton = document.getElementById("submit-button");
@@ -14,18 +14,18 @@ window.addEventListener("load", (event) => {
   const resume = document.getElementById("resume");
   isiDatabase(tableData);
   const namaElement = document.getElementById("input-nama");
-  const authorElement = document.getElementById("input-author");
-  const tahunElement = document.getElementById("input-tahun");
+  const umurElement = document.getElementById("input-umur");
+  const uangElement = document.getElementById("input-uang");
   submitButton.addEventListener("click", (e) => {
     e.preventDefault();
     const nama = namaElement.value;
-    const author = authorElement.value;
-    const tahun = tahunElement.value;
+    const umur = umurElement.value;
+    const uang = uangElement.value;
 
-    const { jikaValid, pesan } = inputValidasi(nama, author, tahun);
+    const { jikaValid, pesan } = inputValidasi(nama, umur, uang);
 
     if (jikaValid) {
-      const newDataGame = new Game(nama, author, tahun);
+      const newDataGame = new Game(nama, umur, uang);
       dataGame.push(newDataGame);
 
       tableData.innerHTML = "";
@@ -37,23 +37,23 @@ window.addEventListener("load", (event) => {
     }
   });
 });
-function inputValidasi(nama, author, tahun) {
+function inputValidasi(nama, umur, uang) {
   let jikaValid = true;
   let pesan = "";
 
-  if (tahun < 1900) {
+  if (uang >= 1000000) {
     jikaValid = false;
-    pesan = "Year must be greater than 1900";
+    pesan = "uang saku maksimal 1 juta";
   }
 
-  if (!nama || nama.length === 0) {
+  if (!nama || nama.length >= 10) {
     jikaValid = false;
-    pesan = "Title cannot be empty";
+    pesan = "nama wajib di isi minimal 10 karakter";
   }
 
-  if (!author || author.length === 0) {
+  if (!umur || umur.length === 0) {
     jikaValid = false;
-    pesan = "author cannot be empty";
+    pesan = "minimal umur 25 dek!";
   }
 
   return {
